@@ -1,5 +1,5 @@
-Question let's play a game
-Question let's {start|go|get going}
+Question {let's|to} {play|start|begin} {a game|}
+Question let's {start|go|get going|begin|play}
 Question for a {question|game|round}
 Response {who|what|where} {is|are} {answers|answer}
 Response {answers|answer}
