@@ -1,0 +1,9 @@
+{
+  "intents": [
+    { "intent": "AMAZON.CancelIntent" },
+    { "intent": "AMAZON.HelpIntent" },
+    { "intent": "AMAZON.StopIntent" },
+    { "intent": "Question" },
+    { "intent": "Response", "slots": [{ "name": "answer", "type": "LITERAL" }] }
+  ]
+}
