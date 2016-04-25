@@ -24,9 +24,9 @@ export default class Gameshow {
   }
 
   @Launch
-  @Intent('Question', 'Response', 'AMAZON.HelpIntent')
-  question({ answer }, { type, intent }) {
-    const start = (type === 'LaunchRequest') || (intent && intent.name === 'AMAZON.HelpIntent');
+  @Intent('Question', 'Response')
+  question({ answer }, { type }) {
+    const start = type === 'LaunchRequest';
     const { answer: correctAnswer } = this.attributes.previous || {};
 
     let pretext;
@@ -37,6 +37,11 @@ export default class Gameshow {
     }
 
     return this._question(start, pretext);
+  }
+
+  @Intent('AMAZON.HelpIntent')
+  help() {
+    return this._question(true, 'The game-show is a trivia quiz. I\'ll ask questions and you guess the answers. Here\'s a question.');
   }
 
   @SessionEnded
