@@ -1,4 +1,4 @@
-import { Skill, Launch, Intent } from 'alexa-annotations';
+import { Skill, Launch, Intent, SessionEnded } from 'alexa-annotations';
 import Response, { say } from 'alexa-response';
 import { ssml } from 'alexa-ssml';
 import fetch from 'isomorphic-fetch';
@@ -39,6 +39,7 @@ export default class Gameshow {
     return this._question(start, pretext);
   }
 
+  @SessionEnded
   @Intent('AMAZON.CancelIntent', 'AMAZON.StopIntent')
   stop() {
     return say('Thanks for playing! See you next time on the game-show!');
